@@ -4,5 +4,6 @@
   "description": "Explore an existing codebase, produce a structured source code audit, and write functional documentation for the application.",
   "author": {
     "name": "theTribe"
-  }
+  },
+  "skills": "./.agents/skills"
 }
