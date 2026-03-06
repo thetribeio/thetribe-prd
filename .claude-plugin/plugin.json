@@ -1,9 +1,9 @@
 {
-  "name": "codebase-audit",
-  "version": "0.1.0",
-  "description": "Explore an existing codebase, produce a structured source code audit, and write functional documentation for the application.",
-  "author": {
-    "name": "theTribe"
-  },
-  "skills": "./.agents/skills"
+    "name": "codebase-audit",
+    "version": "0.1.1",
+    "description": "Explore an existing codebase, produce a structured source code audit, and write functional documentation for the application.",
+    "author": {
+        "name": "theTribe"
+    },
+    "skills": "./.agents/skills"
 }
