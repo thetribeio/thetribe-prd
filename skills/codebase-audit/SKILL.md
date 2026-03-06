@@ -1,9 +1,9 @@
 ---
 name: codebase-audit
-description: Explore an existing codebase, produce a concise source code audit, and write functional documentation for the application. Trigger with "audit this codebase", "review the source code", "document this app", "give me an audit of the project", or when a client needs to understand an existing application they've inherited or are evaluating.
-requires:
-  - anthropics/knowledge-work-plugins/engineering/skills/code-review
-  - anthropics/knowledge-work-plugins/engineering/skills/documentation
+description: >
+  Explores an existing codebase, produces a structured source code audit, and writes functional documentation for the application.
+  Trigger with "audit this codebase", "review the source code", "document this app", "give me an audit of the project",
+  or when a client needs to understand an existing application they've inherited or are evaluating.
 ---
 
 # Codebase Audit & Functional Documentation
@@ -25,7 +25,7 @@ Output a **Codebase Map** section with a directory tree and a one-line descripti
 
 ## Phase 2 — Source Code Audit
 
-Apply the `code-review` skill across the full codebase (not just a diff). Focus on:
+Review the full codebase (not just a diff) using the `code-review` skill. Focus on:
 
 ### Architecture & Structure
 - Is the architecture consistent and intentional (layered, hexagonal, MVC, etc.)?
@@ -59,9 +59,7 @@ Rate overall health as: `Good` / `Needs Improvement` / `Requires Significant Wor
 
 ## Phase 3 — Functional Documentation
 
-Apply the `documentation` skill to produce documentation written for a **non-technical or semi-technical audience** (e.g., product owners, new team members, evaluating clients).
-
-### What to produce
+Use the `documentation` skill to produce documentation for a **non-technical or semi-technical audience** (product owners, new team members, evaluating clients).
 
 **Application Overview**
 - What does this application do? (2–3 sentence pitch)
