@@ -4,6 +4,7 @@ description: >
   Explores an existing codebase, produces a structured source code audit, and writes functional documentation for the application.
   Trigger with "audit this codebase", "review the source code", "document this app", "give me an audit of the project",
   or when a client needs to understand an existing application they've inherited or are evaluating.
+compatibility: Requires the pdf skill from anthropics/skills (install with: claude skills add anthropics/skills/pdf)
 ---
 
 # Codebase Audit & Functional Documentation
@@ -96,3 +97,14 @@ Deliver results in this order:
 ```
 
 Keep each section self-contained so the client can share individual sections with different stakeholders.
+
+## Phase 4 — PDF Export
+
+Once all three sections are complete, use the `pdf` skill to compile the full report into a single PDF file.
+
+- Title page: application name, audit date, and author
+- Table of contents with page references to each section
+- Each section (Codebase Map, Audit Report, Functional Documentation) as a separate chapter
+- Use `reportlab` to generate the PDF programmatically
+
+Name the output file `<project-name>-audit-<YYYY-MM-DD>.pdf` and deliver it to the client.
