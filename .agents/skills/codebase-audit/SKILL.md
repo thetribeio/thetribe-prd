@@ -100,11 +100,47 @@ Keep each section self-contained so the client can share individual sections wit
 
 ## Phase 4 — PDF Export
 
-Once all three sections are complete, use the `pdf` skill to compile the full report into a single PDF file.
+Once all three sections are complete, use the `pdf` skill to compile the full report into a single PDF file using `reportlab`.
+
+### Structure
 
 - Title page: application name, audit date, and author
 - Table of contents with page references to each section
 - Each section (Codebase Map, Audit Report, Functional Documentation) as a separate chapter
-- Use `reportlab` to generate the PDF programmatically
+
+### Color palette
+
+Define these constants at the top of the generation script:
+
+```python
+PRIMARY   = HexColor('#334bec')   # headings, highlights, links
+SECONDARY = HexColor('#1f2e9a')   # code block backgrounds (darker shade of primary)
+```
+
+### Typography and styles
+
+Use `reportlab.platypus` (`SimpleDocTemplate`, `Paragraph`, `Preformatted`, `Table`) with these style rules:
+
+- **Headings** (`Heading1`, `Heading2`, `Heading3`): set `textColor = PRIMARY`
+- **Inline code** (text between backticks): render as `<font name="Courier" color="#1f2e9a">…</font>` inside a `Paragraph`. Never omit or strip backtick-delimited text — it must always be visible.
+- **Code blocks** (fenced with triple backticks): render with `Preformatted` using:
+  - `fontName = 'Courier'`
+  - `fontSize = 8`
+  - `textColor = white`
+  - Wrap inside a `Table` with a single cell, `backColor = SECONDARY`, and 6 pt padding on all sides
+- **Body text**: black on white, `fontSize = 10`
+
+### Markdown-to-reportlab conversion rules
+
+Before building the story, parse the markdown content and apply these conversions in order:
+
+1. Fenced code blocks (` ``` … ``` `) → `Preformatted` wrapped in a colored `Table` (see above)
+2. Inline code (`` `…` ``) → `<font name="Courier" color="#1f2e9a">…</font>` inside a `Paragraph`
+3. `**bold**` → `<b>…</b>`
+4. `# Heading` levels → `Paragraph` with the corresponding `Heading` style
+5. Bullet lines (`- …`) → `Paragraph` with `styles['Bullet']`
+6. Plain text → `Paragraph` with `styles['Normal']`
+
+Never use Unicode subscript/superscript characters — use ReportLab's `<sub>` and `<super>` tags instead.
 
 Name the output file `<project-name>-audit-<YYYY-MM-DD>.pdf` and deliver it to the client.
