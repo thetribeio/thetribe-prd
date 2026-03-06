@@ -4,7 +4,7 @@ description: >
   Explores an existing codebase, produces a structured source code audit, and writes functional documentation for the application.
   Trigger with "audit this codebase", "review the source code", "document this app", "give me an audit of the project",
   or when a client needs to understand an existing application they've inherited or are evaluating.
-compatibility: Requires the pdf skill from anthropics/skills (install with: claude skills add anthropics/skills/pdf)
+compatibility: "Requires the pdf skill from anthropics/skills (install with: claude skills add anthropics/skills/pdf)"
 ---
 
 # Codebase Audit & Functional Documentation
