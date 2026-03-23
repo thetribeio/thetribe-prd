@@ -1,0 +1,21 @@
+{
+  "name": "thetribe-audit-skills",
+  "owner": {
+    "name": "theTribe"
+  },
+  "metadata": {
+    "description": "theTribe codebase audit skills",
+    "version": "0.1.1"
+  },
+  "plugins": [
+    {
+      "name": "codebase-audit",
+      "description": "Explore an existing codebase, produce a structured source code audit, and write functional documentation for the application.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./.agents/skills/codebase-audit"
+      ]
+    }
+  ]
+}
