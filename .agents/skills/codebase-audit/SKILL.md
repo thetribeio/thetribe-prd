@@ -18,7 +18,6 @@ Before starting the audit, verify whether the `pdf` skill is available in the cu
 - If the `pdf` skill is not available, stop immediately and explain that the PDF export phase cannot run until the `pdf` skill from the `anthropics/skills` marketplace, or an equivalent locally installed `pdf` skill, is available.
 - Do not spend time on Phases 1 to 3 if the user explicitly asked for a PDF deliverable and the `pdf` skill is missing.
 - Tell the user which prerequisite is missing before doing any substantial work.
-- Use the local `code-review` and `documentation` skills from this plugin for Phases 2 and 3.
 
 ## Phase 1 — Codebase Exploration
 
@@ -35,7 +34,9 @@ Output a **Codebase Map** section with a directory tree and a one-line descripti
 
 ## Phase 2 — Source Code Audit
 
-Review the full codebase (not just a diff) using the `code-review` skill. Focus on:
+Before reviewing the codebase, consult `references/code-review-guide.md` for the review methodology.
+
+Review the full codebase (not just a diff). Focus on:
 
 ### Architecture & Structure
 - Is the architecture consistent and intentional (layered, hexagonal, MVC, etc.)?
@@ -69,7 +70,9 @@ Rate overall health as: `Good` / `Needs Improvement` / `Requires Significant Wor
 
 ## Phase 3 — Functional Documentation
 
-Use the `documentation` skill to produce documentation for a **non-technical or semi-technical audience** (product owners, new team members, evaluating clients).
+Before writing the documentation, consult `references/documentation-guide.md` for the writing methodology.
+
+Produce documentation for a **non-technical or semi-technical audience** (product owners, new team members, evaluating clients).
 
 **Application Overview**
 - What does this application do? (2–3 sentence pitch)
