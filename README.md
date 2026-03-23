@@ -16,6 +16,12 @@ When a client inherits, evaluates, or onboards onto an existing application, thi
 - The `pdf` skill must be installed for the PDF export phase to work.
 - If `pdf` is not available, the first three phases can still be completed but the final PDF export will fail.
 
+## Installation
+
+This repository includes a Claude Code marketplace manifest in `.claude-plugin/marketplace.json`.
+
+The `/plugin marketplace add` and `/plugin install` flow should be validated against the published repository state before being documented as the standard installation path for users.
+
 ## Skills
 
 | Skill | Trigger |
