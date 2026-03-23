@@ -12,10 +12,7 @@
       "name": "codebase-audit",
       "description": "Explore an existing codebase, produce a structured source code audit, and write functional documentation for the application.",
       "source": "./",
-      "strict": true,
-      "skills": [
-        "./.agents/skills/codebase-audit"
-      ]
+      "strict": true
     }
   ]
 }
