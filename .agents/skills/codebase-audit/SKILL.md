@@ -18,6 +18,7 @@ Before starting the audit, verify whether the `pdf` skill is available in the cu
 - If the `pdf` skill is not available, stop immediately and explain that the PDF export phase cannot run until the `pdf` skill from the `anthropics/skills` marketplace, or an equivalent locally installed `pdf` skill, is available.
 - Do not spend time on Phases 1 to 3 if the user explicitly asked for a PDF deliverable and the `pdf` skill is missing.
 - Tell the user which prerequisite is missing before doing any substantial work.
+- Use the local `code-review` and `documentation` skills from this plugin for Phases 2 and 3.
 
 ## Phase 1 — Codebase Exploration
 
