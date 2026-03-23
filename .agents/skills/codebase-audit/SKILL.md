@@ -4,12 +4,20 @@ description: >
   Explores an existing codebase, produces a structured source code audit, and writes functional documentation for the application.
   Trigger with "audit this codebase", "review the source code", "document this app", "give me an audit of the project",
   or when a client needs to understand an existing application they've inherited or are evaluating.
-compatibility: "Requires the pdf skill from anthropics/skills (install with: claude skills add anthropics/skills/pdf)"
 ---
 
 # Codebase Audit & Functional Documentation
 
 End-to-end workflow to onboard a client onto an existing codebase: map the source code, produce a structured audit, and write functional documentation for the application.
+
+## Preflight
+
+Before starting the audit, verify whether the `pdf` skill is available in the current environment.
+
+- If the `pdf` skill is available, continue with the full four-phase workflow.
+- If the `pdf` skill is not available, stop immediately and explain that the PDF export phase cannot run until the `pdf` skill from the `anthropics/skills` marketplace, or an equivalent locally installed `pdf` skill, is available.
+- Do not spend time on Phases 1 to 3 if the user explicitly asked for a PDF deliverable and the `pdf` skill is missing.
+- Tell the user which prerequisite is missing before doing any substantial work.
 
 ## Phase 1 — Codebase Exploration
 
