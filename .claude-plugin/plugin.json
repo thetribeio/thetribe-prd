@@ -2,6 +2,7 @@
     "name": "codebase-audit",
     "version": "0.1.1",
     "description": "Explore an existing codebase, produce a structured source code audit, and write functional documentation for the application.",
+    "repository": "https://github.com/thetribeio/thetribe-prd",
     "author": {
         "name": "theTribe"
     },
