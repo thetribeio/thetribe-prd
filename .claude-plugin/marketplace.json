@@ -1,0 +1,21 @@
+{
+    "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+    "name": "thetribe-plugins",
+    "version": "0.1.0",
+    "description": "theTribe Claude Code plugins (codebase audit, functional documentation, optional PDF export).",
+    "owner": {
+        "name": "theTribe"
+    },
+    "plugins": [
+        {
+            "name": "codebase-audit",
+            "description": "Maps a repository, runs a structured source audit, writes functional documentation, and optionally exports a PDF via ReportLab.",
+            "version": "0.1.2",
+            "source": ".",
+            "category": "development",
+            "author": {
+                "name": "theTribe"
+            }
+        }
+    ]
+}
